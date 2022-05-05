@@ -211,6 +211,13 @@ function f12() {
         [0,1,0,1,0,1,0,1],
         [1,0,1,0,1,0,1,0],
     ];
+    let out = '';
+    for (let i = 0; i < a12.length; i++) {
+        for (let k = 0; k < a12[i].length; k++) {
+            if (a12[i][k] == 1) out += a12[i][k] + ' ';
+        }
+        document.querySelector('.out-12').innerHTML = out;
+    }
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -221,6 +228,18 @@ document.querySelector('.b-12').onclick = f12;
 let a13 = [];
 
 function f13() {
+    let out = document.querySelector('.out-13');
+    for (let i = 0; i < 9; i++) {
+        for (let k = 1; k < 9; k++) {
+            if (i + k % 2 == 0) {
+                a13.push(0);
+            } else {
+                a13.push(1);
+            }
+        }
+       a13.push('<br>');
+    }
+    out.innerHTML = a13.join(' ');
 
 }
 
@@ -239,6 +258,14 @@ let a14 = [
 ];
 
 function f14() {
+    let out = '';
+    for (let i = 0; i < a14.length; i++) {
+        for (let k = 0; k < a14[i].length; k++) {
+
+        }
+        out += a14[i].length + ' ';
+        document.querySelector('.out-14').innerHTML = out;
+    }
 
 }
 
@@ -255,11 +282,16 @@ let a15 = [
     [3,4,5,6,7,8],
     [1,2]
 ];
-
+let max15 = a15[0].length;
 function f15() {
-
+    let out = document.querySelector('.out-15');
+    for (let i = 1; i < a15.length; i++) {
+        if (a15[i].length > max15) {
+            max15 = a15[i].length;
+        }
+        out.innerHTML = max15;
+    }
 }
-
 document.querySelector('.b-15').onclick = f15;
 
 // Task 16
@@ -286,13 +318,17 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a17 = [
+    [0,0,6],
+    [0,7],
+    0,
+    [0,0,8],
 
 ];
 
 console.group('Task 17 ================');
-// console.log(a17[3][2] == 8);
-// console.log(a17[1][1] == 7);
-// console.log(a17[0][2] == 6);
+console.log(a17[3][2] == 8);
+console.log(a17[1][1] == 7);
+console.log(a17[0][2] == 6);
 
 console.groupEnd();
 
@@ -301,13 +337,18 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a18 = [
+    3,
+    0,
+    [0,12],
+    0,
+    [8,0],
 
 ];
 
 console.group('Task 18 ================');
-// console.log(a18[0] == 3);
-// console.log(a18[4][0] == 8);
-// console.log(a18[2][1] == 12);
+console.log(a18[0] == 3);
+console.log(a18[4][0] == 8);
+console.log(a18[2][1] == 12);
 
 console.groupEnd();
 
@@ -316,13 +357,16 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a19 = [
+    [[0,3],0],
+    [[0,0,8],0],
+    [0,[12,0]],
 
 ];
 
 console.group('Task 19 ================');
-// console.log(a19[0][0][1] == 3);
-// console.log(a19[1][0][2] == 8);
-// console.log(a19[2][1][0] == 12);
+console.log(a19[0][0][1] == 3);
+console.log(a19[1][0][2] == 8);
+console.log(a19[2][1][0] == 12);
 
 console.groupEnd();
 
@@ -331,12 +375,15 @@ console.groupEnd();
 //  Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a20 = [
-
+    0,
+    [0,[0,9]],
+    [0,0,18],
+    12,
 ];
 
 console.group('Task 20 ================');
-// console.log(a20[1][1][1] == 9);
-// console.log(a20[2][2] == 18);
-// console.log(a20[3]== 12);
+console.log(a20[1][1][1] == 9);
+console.log(a20[2][2] == 18);
+console.log(a20[3]== 12);
 
 console.groupEnd();
