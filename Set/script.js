@@ -172,9 +172,11 @@ document.querySelector('.b-11').onclick = f11;
 //   При нажатии b-12 выполняете функцию f12. Функция должна преобразовать строку str12 в массив, так, что каждая буква - отдельный элемент массива. Потом создать набор на основе массива и возвратить его.
 
 let str12 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
-
+let s12 = 0;
 const f12 = () => {
-
+    str12.split(' ');
+    let arr = [...str12];
+    return  s12 = new Set(arr);
 }
 
 document.querySelector('.b-12').onclick = () => {
