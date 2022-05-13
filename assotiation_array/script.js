@@ -341,16 +341,12 @@ let a15 = {
 };
 
 function f15() {
-<<<<<<< HEAD
 
     let out = '';
     for (let key in a15) {
         out += a15[key] + ' ';
     }
     document.querySelector('.out-15').innerHTML = out;
-=======
-    let out = ''
->>>>>>> d32c8f8d8bb60deb54640669fa4f899199a7d710
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -374,15 +370,11 @@ let a16 = {
 }
 
 function f16() {
-<<<<<<< HEAD
     let out = '';
     for (let key in a16) {
         out += a16[key]['name']  + ' ';
     }
     document.querySelector('.out-16').innerHTML = out;
-=======
-
->>>>>>> d32c8f8d8bb60deb54640669fa4f899199a7d710
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -407,7 +399,6 @@ let a17 = {
 }
 
 function f17() {
-<<<<<<< HEAD
     let out = '';
     for (let key in a17) {
        if (a17[key]['age'] > 30) {
@@ -415,9 +406,6 @@ function f17() {
        }
     }
     document.querySelector('.out-17').innerHTML = out;
-=======
-
->>>>>>> d32c8f8d8bb60deb54640669fa4f899199a7d710
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -432,7 +420,6 @@ let a18 = {
 }
 
 function f18() {
-<<<<<<< HEAD
     let inp = document.querySelector('.i-18').value;
     let out = '';
         if (inp !== undefined) {
@@ -441,12 +428,7 @@ function f18() {
         document.querySelector('.out-18').innerHTML = out;
 }
 document.querySelector('.b-18').onclick = f18;
-=======
-
-}
-
->>>>>>> d32c8f8d8bb60deb54640669fa4f899199a7d710
-// Task 19
+    // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
 // Пользователь ввел Lisova - вывод red, ввел Obolon - вывод blue.
 
@@ -457,7 +439,6 @@ let a19 = {
 }
 
 function f19() {
-<<<<<<< HEAD
     let inp = document.querySelector('.i-19').value;
     let out = '';
     for (let key in a19) {
@@ -470,9 +451,6 @@ function f19() {
         }
     }
     document.querySelector('.out-19').innerHTML = out;
-=======
-
->>>>>>> d32c8f8d8bb60deb54640669fa4f899199a7d710
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -487,21 +465,16 @@ let a20 = {
 }
 
 function f20() {
-<<<<<<< HEAD
- let out = '';
- for (let key in a20) {
-    for (let i = 0; i < a20[key].length;i++) {
-       for (let k = 0; k < a20[key][i].length; k++) {
-           if (a20[key][i][k] == 2) {
-               out += a20[key][i] + ' ';
-           }
-       }
+    let out = '';
+    for (let key in a20) {
+        for (let i = 0; i < a20[key].length; i++) {
+            for (let k = 0; k < a20[key][i].length; k++) {
+                if (a20[key][i][k] == 2) {
+                    out += a20[key][i] + ' ';
+                }
+            }
+        }
     }
- }
- document.querySelector('.out-20').innerHTML = out;
-=======
-
->>>>>>> d32c8f8d8bb60deb54640669fa4f899199a7d710
+    document.querySelector('.out-20').innerHTML = out;
 }
-
 document.querySelector('.b-20').onclick = f20
