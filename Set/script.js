@@ -2,17 +2,29 @@
 
 // Task 1
 // Создайте set s1. Добавьте в него три элемента 'h', 'b', 'o', 'h'. Добавление делайте через add. Выведите в консоль получившийся набор (set) s1.
-
 // let s1 = new ...
-
+let s1 = new Set(['h', 'b', 'o', 'h']);
+// s1.add('h');
+// s1.add('b');
+// s1.add('o');
+// s1.add('h');
+let keys = '';
+for (let key of s1) {
+    console.log(s1);
+    console.log(key);
+    keys += key + ' ';
+}
+document.querySelector('.s-1').innerHTML = keys;
 
 // Task 2
 // При нажатии b-2 выполняете функцию f2. Функция должна добавить в набор s2 элементы, которые пользователь вводит в i-2. Функция должна выводить в консоль s2 после каждого добавления элемента.
 
 
 // let s2 =
+let s2 = new Set();
+let inp2 = document.querySelector('.i-2');
 
-const f2 = () => { }
+const f2 = () => {console.log(s2.add(inp2.value)) };
 
 document.querySelector('.b-2').onclick = f2;
 
@@ -21,8 +33,15 @@ document.querySelector('.b-2').onclick = f2;
 // При нажатии b-3 выполняете функцию f3. Функция должна удалить из набора s3 строку, которую пользователь вводит в i-3. Функция должна выводить в консоль s3 после каждого удаления элемента.
 
 let s3 = new Set(['one', 'two', 'four']); // обратите внимание, как просто можно добавить массив в набор!
-
-const f3 = () => { }
+let inp3 = document.querySelector('.i-3');
+const f3 = () => {
+    s3.delete(inp3.value);
+    let out = '';
+    for (let key of s3) {
+        out += key + ' ';
+    }
+    console.log(out);
+};
 
 document.querySelector('.b-3').onclick = f3;
 
@@ -31,8 +50,15 @@ document.querySelector('.b-3').onclick = f3;
 // При нажатии b-4 выполняете функцию f4. Функция должна проверить наличие в наборе s4 строки введенной пользователем в i-4. Если строка есть - то вывести в out-4 true. Если нет - false.
 
 let s4 = new Set(['a', 'b', 'c', 'z']);
-
-const f4 = () => { }
+let inp4 = document.querySelector('.i-4');
+let out4 = document.querySelector('.out-4');
+const f4 = () => {
+    if (s4.has(inp4.value)) {
+        out4.innerHTML = true;
+    } else {
+        out4.innerHTML = false;
+    }
+}
 
 document.querySelector('.b-4').onclick = f4;
 
@@ -41,8 +67,8 @@ document.querySelector('.b-4').onclick = f4;
 
 
 let s5 = new Set(['a', 'b', 'c', 'z', 'a2', 'b2', 'c2', 'z2']);
-
-const f5 = () => { }
+let out5 = document.querySelector('.out-5');
+const f5 = () => {out5.innerHTML = s5.size };
 
 document.querySelector('.b-5').onclick = f5;
 
@@ -50,8 +76,15 @@ document.querySelector('.b-5').onclick = f5;
 // При нажатии b-6 выполняете функцию f6. Функция должна вывести в out-6 число уникальных элементов в массиве a6. Решение должно использовать set.
 
 let a6 = [1, 2, 3, 4, 5, 3, 4, 5, 2, 4, 5, 3, 24, 5, 2, 4, 56, 4, 3, 2, 335, 2, 23, 41, 3, 4, 1, 1, 4, 2, 2, 4, 5, 24, 5, 3, 22, 56];
-
-const f6 = () => { }
+let set6 = new Set(a6);
+let out6 = document.querySelector('.out-6');
+let out = '';
+const f6 = () => {
+    for (let key of set6) {
+        out += key + ' ';
+    }
+    out6.innerHTML = out;
+};
 
 document.querySelector('.b-6').onclick = f6;
 
