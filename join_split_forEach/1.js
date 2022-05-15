@@ -5,7 +5,7 @@ let a1_res = [], a2_res = [], a3_res = [], a4_res = [], a5_res = [], a6_res = []
 
 function t1() {
     let a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
-    let out = a1.forEach(elem => {
+     a1.forEach(elem => {
         a1_res.push(elem * 2);
     });
     document.querySelector('.out-1').innerHTML = a1_res;
@@ -20,7 +20,7 @@ document.querySelector('.b-1').onclick = t1;
 
 function t2() {
 let a1 = [2,3,4,5,10,11,12];
-let out = a1.forEach(el => {
+ a1.forEach(el => {
     a2_res.push(el / 2);
   });
 document.querySelector('.out-2').innerHTML = a2_res;
@@ -34,7 +34,7 @@ document.querySelector('.b-2').onclick = t2;
 
 function t3() {
 let a3 = [2, 'hello', 3, 'hi', 4, 'Mazai'];
-let out = a3.forEach(el => {
+a3.forEach(el => {
     if (typeof el == "number") a3_res.push(el);
 
 });
@@ -63,7 +63,8 @@ document.querySelector('.b-4').onclick = t4;
 /*  На странице созданы 3 p.task-5 c атрибутом data. С помощью forEach переберите их и добавьте событие клик. Напишите функцию t5, которая будет запускаться при клике и добавлять атрибут data элемента, по которому кликнули в массив a5_res.*/
 
 function t5() {
-
+    a5_res.push(this.getAttribute('data'));
+    document.querySelector('.out-5').innerHTML = a5_res;
 }
 
 document.querySelectorAll('.task-5').forEach(elem => {
@@ -76,7 +77,9 @@ document.querySelectorAll('.task-5').forEach(elem => {
 /*  Дана строка str6='helloworld' - преобразуйте ее в массив и присвойте a6_res. Выведите на страницу. Запускаться решение должно при вызове функции t6. */
 
 function t6() {
-
+ let  str6 = 'helloworld';
+ a6_res.push(str6.split(' '));
+ document.querySelector('.out-6').innerHTML = a6_res;
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -86,7 +89,9 @@ document.querySelector('.b-6').onclick = t6;
 /*  Дана строка str7='hello world hi mazai' - преобразуйте ее в массив и разбейте по словам. Причем слова не должны содержать пробелов и присвойте a6_res. выведите на страницу.  Запускаться решение должно при вызове функции t7. */
 
 function t7() {
-
+let str7 = 'hello world hi mazai';
+a7_res.push(str7.split(' '));
+document.querySelector('.out-7').innerHTML = a7_res;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -95,7 +100,8 @@ document.querySelector('.b-7').onclick = t7;
 /*  Дан массив a8 = [1,2,66,77,15] - преобразуйте ее в строку. Разделитель - дефис. Результат присвойте a8_res. Запускаться решение должно при вызове функции t8. */
 
 function t8() {
-
+let a8 = [1,2,66,77,15];
+document.querySelector('.out-8').innerHTML = a8.join('-');
 }
 
 document.querySelector('.b-8').onclick = t8;
