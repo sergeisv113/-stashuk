@@ -111,7 +111,13 @@ document.querySelector('.b-8').onclick = t8;
 /*  Дан массив a9 = [[hi, mahai], [test, best]] - преобразуйте его в строку. Разделитель - дефис. Результат присвойте a9_res. Запускаться решение должно при вызове функции t9. Допускается лишний дефис в конце строки!!! */
 
 function t9() {
-
+    let a9 = [['hi', 'mahai'], ['test', 'best']];
+        for (let item of a9) {
+            for (let i = 0; i < item.length; i++) {
+                a9_res += item[i] + '-';
+            }
+        }
+document.querySelector('.out-9').innerHTML = a9_res ;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -121,7 +127,13 @@ document.querySelector('.b-9').onclick = t9;
 /*  Дан массив a10 = {name: ivan, age: 15, sex: 1, id: 45} - преобразуйте его в GET строку (GET параметры). Найдите описание что такое GET строка самостоятельно. Разделитель - амперсанд. Результат присвойте a10_res. Запускаться решение должно при вызове функции t10. Допускается лишний амперсанд в конце строки!!! */
 
 function t10() {
-
+let a10 = {name: 'ivan', age: 15, sex: 1, id: 45};
+for (let i in a10) {
+    console.log(i)
+    console.log(a10[i])
+    a10_res += `${i}=${a10[i]}&`
+  }
+document.querySelector('.out-10').innerHTML = a10_res;
 }
 
 document.querySelector('.b-10').onclick = t10;
