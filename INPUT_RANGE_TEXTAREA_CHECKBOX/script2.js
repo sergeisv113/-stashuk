@@ -126,6 +126,11 @@ document.querySelector('.b-9').onclick = f9;
 
 
 function f10() {
+let out = document.querySelector('.out-10');
+let i = document.querySelector('.i-10');
+let b = document.querySelector('.b-10');
+b.style.background = i.value;
+out.innerHTML = i.value ;
 
 }
 
