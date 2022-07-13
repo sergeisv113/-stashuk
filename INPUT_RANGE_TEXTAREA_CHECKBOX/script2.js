@@ -141,7 +141,9 @@ document.querySelector('.b-10').onclick = f10;
 //   Создайте input(color).i-111 и input(color).i-112- два элемента и button.b-11 - при нажатии на кнопку присвойте цвет из первого input в value второго.
 
 function f11() {
-
+let i111 = document.querySelector('.i-111');
+let i112 = document.querySelector('.i-112');
+i112.value = i111.value;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -150,7 +152,9 @@ document.querySelector('.b-11').onclick = f11;
 //   Создайте input(date).i-12 и button.b-12 - при нажатии на кнопку выводите на в  out-12 выбранную в input дату.
 
 function f12() {
-
+let i = document.querySelector('.i-12');
+let out = document.querySelector('.out-12');
+out.innerHTML = i.value
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -159,7 +163,9 @@ document.querySelector('.b-12').onclick = f12;
 //  Создайте input(range).i-13. При изменении положения ползунка i-13 выводите значение в out-13. Для события используйте oninput.
 
 function f13() {
-
+let i = document.querySelector('.i-13');
+let out = document.querySelector('.out-13');
+out.innerHTML = i.value;
 }
 
 document.querySelector('.i-13').oninput = f13;
@@ -168,7 +174,9 @@ document.querySelector('.i-13').oninput = f13;
 // Создайте text-area.t-14 и button.b-14 - при нажатии на кнопку выводите на в out-14 текст введенный в t-14.
 
 function f14() {
-
+let out = document.querySelector('.out-14');
+let t = document.querySelector('.t-14');
+out.innerHTML = t.value;
 }
 
 document.querySelector('.b-14').onclick = f14;
