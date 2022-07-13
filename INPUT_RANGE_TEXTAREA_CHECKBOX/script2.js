@@ -185,7 +185,11 @@ document.querySelector('.b-14').onclick = f14;
 // Создайте text-area.t-15, input.i-15 и button.b-15 - при нажатии на кнопку выводите текст из input.i-15 в textarea.t-15 и на страницу в out-15.
 
 function f15() {
-
+let i = document.querySelector('.i-15');
+let t = document.querySelector('.t-15');
+let out = document.querySelector('.out-15');
+t.innerHTML = i.value;
+out.innerHTML = i.value;
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -195,7 +199,9 @@ document.querySelector('.b-15').onclick = f15;
 
 function f16() {
     // для получения выбранного option просто получите select в переменную и select.value;
-
+let f = document.querySelector('.s-16');
+let out = document.querySelector('.out-16');
+out.innerHTML = f.value
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -204,7 +210,9 @@ document.querySelector('.b-16').onclick = f16;
 // Создайте select.s-17. Добавьте ему событие onchange, при наступлении которого запускается функция f17. Функция должна выводить в out-17 value выбранного в select option.
 
 function f17() {
-
+let s = document.querySelector('.s-17');
+let out = document.querySelector('.out-17');
+out.innerHTML = s.value;
 }
 
 document.querySelector('.s-17').onchange = f17;
@@ -213,7 +221,9 @@ document.querySelector('.s-17').onchange = f17;
 // Создайте select.s-18 и input.i-18. Добавьте на select событие onchange, при наступлении которого запускается функция f18. Функция должна выводить в input i-18 value выбранного в select option.
 
 function f18() {
-
+let s = document.querySelector('.s-18');
+let i = document.querySelector('.i-18');
+i.value = s.value;
 }
 
 document.querySelector('.s-18').onchange = f18;
@@ -222,7 +232,10 @@ document.querySelector('.s-18').onchange = f18;
 // Создайте форму. В ней input(text).i-191 и input(password).i-192 - и кнопку button.b-19. По нажатию кнопки выводите значение text и password в out-19 через пробел. Обратите внимание на хитрость. Мы, кнопку сейчас повесили за пределами формы. Чуть позже мы рассмотрим почему это делали.
 
 function f19() {
-
+let i191 = document.querySelector('.i-191');
+let i192 = document.querySelector('.i-192');
+let out = document.querySelector('.out-19');
+out.innerHTML = i191.value + ' ' + i192.value;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -232,13 +245,14 @@ document.querySelector('.b-19').onclick = f19;
 
 // очень внимательно изучите верстку!!!
 // обратите внимание, что мы не используем class, а присвоили name!!!
-
 function f20(e) {
     e.preventDefault(); // чтобы форма не перезагружала страницу!!!!
+    let out = document.querySelector('.out-20');
     let form = document.querySelector('.f-20');
+
     console.log(form.elements);
     console.log(form.elements['username'].value); // так можно обратиться к элементу внутри формы
-
+out.innerHTML = form.elements['password'].value + ' ' + form.elements['username'].value;
 }
 
 document.querySelector('.b-20').onclick = f20;
