@@ -62,7 +62,11 @@ document.querySelector('.b-5').onclick = f5;
 // По нажатию b-6 запускайте функцию f6, которая выводит в out-6 количество параграфов с классом p-6.
 
 function f6() {
-
+let out = document.querySelector('.out-6');
+let p = document.querySelectorAll('.p-6');
+for (let i = 0; i < p.length; i++ ) {
+    out.innerHTML = p.length;
+   }
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -75,6 +79,10 @@ let blocks7 = document.querySelectorAll('.out-7');
 
 function f7() {
     //внутри цикла blocks7[i].classList....
+    let out = document.querySelectorAll('.out-7');
+    for (let i = 0; i < out.length; i++) {
+        out[i].classList.add('bg-7');
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -87,6 +95,9 @@ let blocks8 = document.querySelectorAll('.out-8');
 
 function f8() {
     //внутри цикла blocks8[i].classList....
+  for (let i = 0; i < blocks8.length; i++){
+          blocks8[i].classList.toggle('bg-8');
+      }
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -97,6 +108,7 @@ document.querySelector('.b-8').onclick = f8;
 
 function f9() {
     //this.classList...  // все решается одной строкой
+    this.classList.add('bg-9');
 }
 
 let div9 = document.querySelectorAll('.out-9');
@@ -112,9 +124,12 @@ for (let i = 0; i < div9.length; i++) {
 //let div10 = тут получите все out-10
 
 function f10() {
-
+this.classList.toggle('bg-10');
 }
-
+let d = document.querySelectorAll('.out-10');
+for (let i = 0; i < d.length; i++) {
+    d[i].onclick = f10;
+}
 // а тут цикл, похожий на предыдущее задание
 
 
@@ -124,7 +139,10 @@ function f10() {
 
 
 function f11() {
-
+let out = document.querySelector('.out-11');
+let a = document.createElement('div');
+a.innerHTML = '25';
+out.append(a);
 }
 
 document.querySelector('.b-11').onclick = f11;
