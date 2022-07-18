@@ -122,7 +122,11 @@ document.querySelector('.b-8').onclick = f8;
 let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
-
+    let a = [];
+for (let i = 1; i < d9.length;i++){
+  a[i - 1] = d9[i];
+}
+  d9  = a;
     showArr('.out-9', d9);
 }
 
@@ -137,7 +141,7 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
-
+d10.reverse();
     showArr('.out-10', d10);
 }
 
@@ -151,9 +155,14 @@ document.querySelector('.b-10').onclick = f10;
 // Вывод в out-11
 
 let d11 = [2, 3, 4, 5, 6, 7];
-
 function f11() {
-
+let inp = +document.querySelector('.i-11').value;
+let out = document.querySelector('.out-11');
+if (d11.indexOf(inp)){
+    out.innerHTML = d11.indexOf(inp);
+  } else {
+    out.innerHTML = -1;
+  }
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -166,9 +175,17 @@ document.querySelector('.b-11').onclick = f11;
 // Вывод в out-12
 
 let d12 = [6, 62, 60, 70, 1, 5];
-
 function f12() {
-
+    let inp12 = +document.querySelector('.i-12').value;
+    let out = document.querySelector('.out-12');
+for (let i = 0; i < d12.length; i++){
+    if ( inp12 == d12[i]){
+        out.innerHTML = i;
+        break;
+    } else {
+        out.innerHTML = -1;
+    }
+  }
 }
 
 document.querySelector('.b-12').onclick = f12;
