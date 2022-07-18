@@ -241,7 +241,10 @@ document.querySelector('.b-13').onclick = f13;
 let ar14 = [1, 2, 3, 'hello', 66];
 
 function f14() {
-
+    let out = document.querySelector('.out-14');
+for (let i = ar14.length - 1; i >= 0; i--){
+    out.innerHTML += ar14[i] + ' ';
+  }
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -255,7 +258,12 @@ document.querySelector('.b-14').onclick = f14;
 let ar15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
-
+let out = document.querySelector('.out-15');
+for (let i = 0; i < ar15.length; i++){
+      if (ar15[i] > 0){
+          out.innerHTML += ar15[i] + ' ';
+      }
+   }
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -271,7 +279,17 @@ let ar16_odd = [];
 let ar16_even = [];
 
 function f16() {
-
+let event = document.querySelector('.out-16-even');
+let odd = document.querySelector('.out-16-odd');
+for (let i = 0; i < ar16.length; i++){
+    if (i % 2 == 0){
+        ar16_even += ar16[i];
+        event.innerHTML += ar16[i] + ' ';
+    } else {
+        ar16_odd += ar16[i];
+        odd.innerHTML += ar16[i] + ' ';
+    }
+  }
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -285,7 +303,14 @@ document.querySelector('.b-16').onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
-
+    let out = document.querySelector('.out-17');
+    let a = 0;
+    for (let i = 0; i < ar17.length; i++){
+        if (ar17[i] > 3){
+            a++
+        }
+    }
+    out.innerHTML = a;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -300,7 +325,13 @@ document.querySelector('.b-17').onclick = f17;
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
 function f18() {
-
+let  out = document.querySelector('.out-18');
+let m = 0;
+for (let i = 0; i < ar18.length; i++){
+    if (ar18[i] > m){
+        out.innerHTML = ar18[i];
+    }
+   }
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -315,7 +346,13 @@ document.querySelector('.b-18').onclick = f18;
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
 function f19() {
-
+let out = document.querySelector('.out-19');
+let m = ar19[0];
+for (let i = 0; i < ar19.length; i++){
+    if (m > ar19[i]){
+        out.innerHTML = ar19[i];
+    }
+  }
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -329,7 +366,12 @@ document.querySelector('.b-19').onclick = f19;
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
-
+let out = document.querySelector('.out-20');
+let sum = 0;
+for (let i = 0; i < ar20.length; i++){
+    sum = sum + ar20[i];
+   }
+out.innerHTML = sum;
 }
 
 document.querySelector('.b-20').onclick = f20;
