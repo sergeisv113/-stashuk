@@ -5,6 +5,9 @@
 
 function f1() {
     //ваш_элемент.innerHTML = ar1; // да так можно выводить!!!!
+    let arr = ['hello', 345, true];
+    let out = document.querySelector('.out-1');
+    out.innerHTML = arr;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -20,6 +23,12 @@ function f2() {
     //     out +=arr2[i]+' ';
     // }
     // document.querySelector('.out-2').innerHTML = out;
+    let arr2 = ['hello', 4543, true];
+    let out = '';
+    for (let i = 0; i < arr2.length; i++){
+        out += arr2[i] + ' ';
+    }
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -31,8 +40,9 @@ document.querySelector('.b-2').onclick = f2;
 // Тест допустим массив [1,2,3] вывод - 3
 
 // let ar3 =  // переменную обьявляем здесь!!!!
-
+let arr3 = [1,2,3,4,5,6,7,8,9,10];
 function f3() {
+    document.querySelector('.out-3').innerHTML = arr3.length;
 }
 
 document.querySelector('.b-3').onclick = f3;
@@ -45,8 +55,10 @@ document.querySelector('.b-3').onclick = f3;
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 1 4 9
 
 // let ar4 =  // переменную обьявляем эту здесь!!!!
-
+let arr4 = [1,2,3,4,5,6,7,8,9,10];
 function f4() {
+    let out = document.querySelector('.out-4');
+    out.innerHTML = arr4[0] + ' ' + arr[4] + ' ' + arr[8];
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -59,8 +71,10 @@ document.querySelector('.b-4').onclick = f4;
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 8
 
 // let ar5 =
-
+let arr5 = [1,2,3,4,5,6,7,8,9,10];
 function f5() {
+    let out = document.querySelector('.out-5');
+    out.innerHTML += arr5[0] + arr5[2] + arr5[3];
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -72,8 +86,12 @@ document.querySelector('.b-5').onclick = f5;
 // Вывод в out-6
 
 // let ar6 =
-
+let ar6 = ['Sergei', 'scorpion', 31, 'october'];
 function f6() {
+    let out = document.querySelector('.out-6');
+    for (let i = 0; i < ar6.length; i++) {
+        out.innerHTML += ar6[i] + ' ';
+    }
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -85,8 +103,14 @@ document.querySelector('.b-6').onclick = f6;
 // Вывод в out-7
 
 let ar7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
-
 function f7() {
+    let out = document.querySelector('.out-7');
+    ar7[5] = 'italy';
+    ar7[6] = 'turkey';
+    ar7[7] = 'vietnam';
+    for (let i = 0; i < ar7.length; i++) {
+        out.innerHTML += ar7[i] + ' ';
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -101,6 +125,15 @@ document.querySelector('.b-7').onclick = f7;
 let ar8 = [];
 
 function f8() {
+    let out = document.querySelector('.out-8');
+    let out1 = document.querySelector('.out-8-1');
+    ar8[3] = 3.14;
+    ar8[4] = 17;
+    ar8[6] = 5;
+    for (let i = 0; i < ar8.length; i++){
+        out.innerHTML += ar8[i] + ' ';
+        out1.innerHTML = ar8.length;
+    }
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -114,6 +147,8 @@ document.querySelector('.b-8').onclick = f8;
 let ar9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
+    let out = document.querySelector('.out-9');
+    out.innerHTML = ar9.length - 1;
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -127,6 +162,8 @@ document.querySelector('.b-9').onclick = f9;
 let ar10 = [100, 200, 300, 400, 700, 121];
 
 function f10() {
+    let out = document.querySelector('.out-10');
+    out.innerHTML = ar10[1] + ar10[ar10.length - 1];
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -142,7 +179,13 @@ document.querySelector('.b-10').onclick = f10;
 let ar11 = [2, 3, 4, 5, 6, 7];
 
 function f11() {
-
+let out = document.querySelector('.out-11');
+let a = ar11[2];
+ar11[2] = ar11[4];
+ar11[4] = a;
+for (let i = 0; i < ar11.length; i++){
+    out.innerHTML += ar11[i] + ' ';
+  }
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -157,7 +200,13 @@ document.querySelector('.b-11').onclick = f11;
 let ar12 = ['test', 'west', 'list', 'class', 'best'];
 
 function f12() {
-
+let out = document.querySelector('.out-12');
+let a = ar12[0];
+ar12[0] = ar12[ar12.length - 1];
+ar12[ar12.length - 1] = a;
+for (let i = 0; i < ar12.length; i++) {
+    out.innerHTML += ar12[i] + ' ';
+  }
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -174,7 +223,10 @@ document.querySelector('.b-12').onclick = f12;
 let ar13 = ['test', 'west', 'list', 'class', 'best'];
 
 function f13() {
-
+let out = document.querySelector('.out-13');
+for (let i = 0; i < ar13.length; i++){
+  out.innerHTML += ar13[i] + ' ';
+  }
 }
 
 document.querySelector('.b-13').onclick = f13;
