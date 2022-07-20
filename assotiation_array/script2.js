@@ -194,9 +194,13 @@ document.querySelector('.b-9').onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
-
-    //return true;
-    //return false;
+for (let key in arr){
+    if (val == arr[key]){
+        return true;
+    } else {
+        return false;
+    }
+  }
 }
 
 document.querySelector('.b-10').onclick = () => {
@@ -221,6 +225,17 @@ let a11 = {
 };
 
 function f11() {
+    let inp = document.querySelector('.i-11').value;
+    let out = document.querySelector('.out-11');
+    let k = '';
+    for (let key in a11){
+        if (inp == key){
+            delete key;
+            continue;
+        }
+        k += `${key} : ${a11[key]} <br>`;
+    }
+    out.innerHTML = k;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -237,7 +252,13 @@ let a12 = {
 };
 
 function f12() {
-
+    let inp = document.querySelector('.i-12').value;
+    for (let key in a12){
+    if (inp == a12[key]) {
+        delete a12[key];
+    }
+  }
+    f5(a12, '.out-12');
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -253,7 +274,15 @@ let a13 = {
 };
 
 function f13() {
-
+ let out = 0;
+for (let key in a13){
+    if (typeof a13[key] == 'number'){
+        out = out + a13[key];
+    } else {
+        delete  a13[key];
+    }
+ }
+    document.querySelector('.out-13').innerHTML = out;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -270,7 +299,11 @@ let a14 = {
 };
 
 function f14() {
-
+let out = '';
+for (let key in a14){
+    out += a14[key][0] + ' ';
+  }
+document.querySelector('.out-14').innerHTML = out;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -288,7 +321,13 @@ let a15 = {
 };
 
 function f15() {
-
+let out = '';
+for (let key in a15){
+    for (let i = 0; i < a15[key].length; i++){
+        out += a15[key][i] + ' ';
+    }
+ }
+document.querySelector('.out-15').innerHTML = out;
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -312,7 +351,11 @@ let a16 = {
 }
 
 function f16() {
-
+let out = '';
+for (let key in a16){
+        out += a16[key]['name'] + ' ';
+  }
+document.querySelector('.out-16').innerHTML = out;
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -337,7 +380,13 @@ let a17 = {
 }
 
 function f17() {
-
+let out = '';
+for (let key in a17){
+    if (a17[key]['age'] > 30){
+        out += a17[key]['name'] + ' ';
+    }
+  }
+document.querySelector('.out-17').innerHTML = out;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -352,9 +401,14 @@ let a18 = {
 }
 
 function f18() {
-
+let inp = document.querySelector('.i-18').value;
+let out = '';
+if ( inp in a18){
+    out = a18[inp].join(' ');
+ }
+document.querySelector('.out-18').innerHTML = out;
 }
-
+document.querySelector('.b-18').onclick = f18;
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
 // Пользователь ввел Lisova - вывод red, ввел Obolon - вывод blue.
@@ -366,7 +420,17 @@ let a19 = {
 }
 
 function f19() {
-
+let inp = document.querySelector('.i-19').value;
+ let out = document.querySelector('.out-19');
+for (let key in a19){
+    for (let item of a19[key]) {
+        if (item.toUpperCase() == inp || inp == item) {
+            out.innerHTML += key;
+        } else {
+            out.innerHTML += '';
+        }
+    }
+ }
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -381,7 +445,15 @@ let a20 = {
 }
 
 function f20() {
-
+let out = '';
+for (let key in a20){
+    for (let i = 0; i < a20[key].length; i++){
+        if (a20[key][i][1] == 2){
+            out += a20[key][i][0] + ',  ';
+        }
+    }
+    document.querySelector('.out-20').innerHTML = out;
+ }
 }
 
 document.querySelector('.b-20').onclick = f20
