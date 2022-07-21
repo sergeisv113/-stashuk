@@ -3,3 +3,19 @@ function findMultiples(int,limit){
 }
 const playerRankUp = points =>
     points >= 100 ? 'Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.' : false;
+
+function greet(name) {
+
+    if (name === "Johnny") {
+        return "Hello, my love!";
+    } else {
+        return "Hello, " + name + "!";
+    }
+}
+
+const index = (array, n) => array.length > n ? Math.pow(array[n], n) : -1;
+index([1, 2, 3, 4],2);
+
+function position(letter){
+    return "Position of alphabet: " + ((letter.charCodeAt(0)-97) + 1);
+}
