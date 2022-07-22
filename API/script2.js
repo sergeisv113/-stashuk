@@ -1,5 +1,5 @@
 // task 1 --------------------
-fetch('http://api.openweathermap.org/data/2.5/weather?id=c7041ef4e7852cbc0e8f4b52916f1094')
+fetch('http://api.openweathermap.org/data/2.5/weather?id=703448&appid=346b7e1764316e8050f270aaef2f3fde')
     .then(function (resp) { return resp.json() })
     .then(function (data) {
         console.log(data);
