@@ -99,7 +99,12 @@ document.querySelector('.b-7').onclick = f7;
 let s8 = new Set([1, 2, 3, 4, 5, 3, 4, 7, 9, 5, 7, 8, 9, 23, 45, 5, 2, 4, 5, 3, 24, 5, 2, 4, 56, 4, 3, 2, 335, 2, 23, 41, 3, 4, 1, 1, 4, 2, 2, 4, 5, 24, 5, 3, 22, 56]);
 let ar8 = [];
 
-const f8 = () => { }
+const f8 = () => {
+    for (let i of s8){
+        if (i > 5) ar8 += i + ' ';
+    }
+    console.log(ar8);
+}
 
 document.querySelector('.b-8').onclick = f8;
 
@@ -117,7 +122,9 @@ document.querySelector('.b-9').onclick = () => {
 // Task 10
 // При нажатии b-10 выполняете функцию f10. Функция должна принимать набор set в качестве параметра и выводить его в указанный элемент. Элемент указывается как второй параметр функции f10. Вывод значений - через пробел.
 
-const f10 = (out_set, elem) => { }
+const f10 = (out_set, elem) => {
+    for (let i of out_set) {document.querySelector(elem).innerHTML += i + ' '}
+}
 
 document.querySelector('.b-10').onclick = () => {
     let a10 = new Set(['4', '5', '6']);
@@ -132,7 +139,7 @@ document.querySelector('.b-10').onclick = () => {
 const f11 = () => {
     let s = new Set();
     s.add([1]);
-    s.add([1]);
+    s.add([1]);//внесен елем как []
     console.log(s);
 }
 
@@ -143,9 +150,17 @@ document.querySelector('.b-11').onclick = f11;
 
 let str12 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
 
-const f12 = () => {
 
+const f12 = () => {
+    let arr12 = Array.from(str12);
+
+    let set12 = new Set(arr12);
+    for (let item of set12) {
+        console.log(item);
+    }
+    return console.log;
 }
+
 
 document.querySelector('.b-12').onclick = () => {
     console.log(f12());
@@ -160,8 +175,17 @@ let str13 = 'The name conjures up visions of plum pudding and Christmas punch qu
 
 
 const f13 = () => {
+    let a13 = Array.from(str12);
+    let count = {};
 
-    // return
+    for (let i of a13) {
+        if (count[i] === undefined) {
+            count[i] = 1;
+        } else {
+            count[i]++;
+        }
+    }
+    console.log(count);
 }
 
 document.querySelector('.b-13').onclick = () => {
