@@ -27,3 +27,18 @@ function isDivisible(n, x, y) {
         return false;
     }
 }
+
+function capitalizeWord(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+capitalizeWord('word')
+
+function sum (numbers) {
+    let k = 0;
+    if (numbers.length == 0) {return 0}
+    for(let i = 0; i < numbers.length; i++){
+        k += numbers[i];
+    }
+    return k;
+};
+sum([1, 5.2, 4, 0, -1])
