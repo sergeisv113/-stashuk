@@ -19,3 +19,11 @@ index([1, 2, 3, 4],2);
 function position(letter){
     return "Position of alphabet: " + ((letter.charCodeAt(0)-97) + 1);
 }
+
+function isDivisible(n, x, y) {
+    if(n % x == 0 && n % y == 0){
+        return true;
+    } else {
+        return false;
+    }
+}
