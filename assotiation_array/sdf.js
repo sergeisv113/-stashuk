@@ -41,4 +41,9 @@ function sum (numbers) {
     }
     return k;
 };
-sum([1, 5.2, 4, 0, -1])
+
+function nearestSq(n){
+    let i,j;
+    for(i = j = n; Math.sqrt(i) % 1 != 0 && Math.sqrt(j) % 1 != 0; i++, j--);
+    return Math.sqrt(i) % 1 == 0 ? i : j
+}
