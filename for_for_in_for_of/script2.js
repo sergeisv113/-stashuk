@@ -50,10 +50,14 @@ document.querySelector('.b-4').addEventListener('click', f4);
 //При нажатии .b-5 выполняете функцию f5. Функция должна с помощью for of перебрать массив a5 и возвратить новый массив куда входят элементы из a5 большие 7.
 
 let a5 = [3,4,5,2,1,7,8,2,4,6,8,11,23,17];
-
+let k5 = [];
 function f5() {
-
+for (let key of a5){
+    if (key > 7) {k5.push(key);}
+    }
+  return k5;
 }
+
 
 document.querySelector('.b-5').addEventListener('click', ()=> {
     document.querySelector('.out-5').innerHTML = f5();
@@ -63,9 +67,11 @@ document.querySelector('.b-5').addEventListener('click', ()=> {
 //При нажатии .b-6 выполняете функцию f6. Функция должна превратить массив a6 в одномерный. Результат вывести в out-6 через пробел.
 
 let a6 = [[1,2], [3,4], [5,6]];
-
+let out6 = document.querySelector('.out-6');
 function f6() {
-
+let k = [];
+for (let i of a6){k.push(i);}
+out6.innerHTML = k;
 }
 
 document.querySelector('.b-6').addEventListener('click', f6);
@@ -74,11 +80,17 @@ document.querySelector('.b-6').addEventListener('click', f6);
 //При нажатии .b-7 выполняете функцию f7. Функция должна переиндексировать массив a7. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a7 объект, где ключи - значения id из вложенных массивов, а значения - имя (т.е { 23 : Ivan, 45 : Petr}. Функция должна возвращать результирующий массив.
 
 let a7 = [{ id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
-
 function f7() {
-
+    let result = {};
+    for (let obj of a7) {
+        result[obj.id] = obj.name;
+    }
+    return result;
 }
-
+/*return a7.map(({id,name})=> (
+    {[id]: name}
+));
+}*/
 document.querySelector('.b-7').addEventListener('click', ()=>{
     console.log(f7());
 });
@@ -88,9 +100,10 @@ document.querySelector('.b-7').addEventListener('click', ()=>{
 //При нажатии .b-8 выполняете функцию f8. Функция должна переиндексировать массив a8. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a8 массив, который будет содержать только числовые id. Т.е. [23, 45]. Функция должна возвращать результирующий массив.
 
 let a8 = [ { id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
-
 function f8() {
-
+    let res = [];
+for (let i of a8){res += i.id + ', ';}
+return res;
 }
 
 document.querySelector('.b-8').addEventListener('click', ()=>{
@@ -100,10 +113,13 @@ document.querySelector('.b-8').addEventListener('click', ()=>{
 // Task 9
 //При нажатии .b-9 выполняете функцию f9. Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов. В данном случае это 4. Т.е. самый большой вложенный массив это [0,0,0,0,0], а в нем самый большой индекс 4.
 
-let a9 = [ [4,3,2], [2,5], [0,0,0,0,0]];
-
+let a9 = [ [4,3,2], [2,5], [0,0,0,0,0,0,0,0]];
 function f9() {
-
+    let h = 0;
+    let max;
+  for (let i = 0; i < a9.length; i++){ max = a9[i].length}
+  if (max > h){h = max}
+  return h;
 }
 
 document.querySelector('.b-9').addEventListener('click', ()=>{
@@ -116,7 +132,8 @@ document.querySelector('.b-9').addEventListener('click', ()=>{
 let a10 = [4, 6, 9, 'Hello'];
 
 function f10() {
-
+    let k = a10.reduce((a, i) => (a[i] = i, a), {});
+    return k;
 }
 
 document.querySelector('.b-10').addEventListener('click', () => {
