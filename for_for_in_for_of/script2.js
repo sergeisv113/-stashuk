@@ -149,9 +149,13 @@ let a11 = {
     three: 13,
     four: 0
 }
-
+let out11 = document.querySelector('.out-11');
 function f11() {
-
+let k = '';
+for (let i in a11){
+    if (a11[i] > 10){k += a11[i] + ' '}
+ }
+out11.innerHTML = k;
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -160,9 +164,11 @@ document.querySelector('.b-11').addEventListener('click', f11);
 //При нажатии .b-12 выполняете функцию f12. Функция должна c помощью for of перебрать a12 и вывести в out-12 через пробел.
 
 let a12 = [4,5,6,7];
-
+let out12 = document.querySelector('.out-12');
 function f12() {
-
+    let k = '';
+for (let i of a12){k += i + ' '}
+  out12.innerHTML = k;
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -172,9 +178,11 @@ document.querySelector('.b-12').addEventListener('click', f12);
 //При нажатии .b-13 выполняете функцию f13. Функция должна c помощью for of перебрать a13 и вывести по символу в out-13 через пробел.
 
 let a13 = 'testone';
-
+let out13 = document.querySelector('.out-13');
 function f13() {
-
+    let k = '';
+    for (let i of a13){k += i + ' '}
+out13.innerHTML = k;
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -185,9 +193,11 @@ document.querySelector('.b-13').addEventListener('click', f13);
 //При нажатии .b-14 выполняете функцию f14. Функция должна c помощью for of перебрать a14 и вывести по элементам в out-14 через пробел.
 
 let a14 = new Set([4,5,6]);
-
+let out14 = document.querySelector('.out-14');
 function f14() {
-
+    let k = '';
+for (let i of a14){k += i + ' '}
+out14.innerHTML = k;
 }
 
 document.querySelector('.b-14').addEventListener('click', f14);
@@ -197,7 +207,8 @@ document.querySelector('.b-14').addEventListener('click', f14);
 
 
 function f15() {
-
+let outs = document.querySelectorAll('.out-15');
+for (let i of outs){i.innerHTML = 15}
 }
 
 document.querySelector('.b-15').addEventListener('click', f15);
