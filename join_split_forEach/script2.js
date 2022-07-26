@@ -112,14 +112,13 @@ document.querySelector('.b-8').onclick = t8;
 
 
 function t9() {
-    let a9_res = '';
-    let a9 = [[hi, mahai], [test, best]];
-    for (let i of a9){
-        for (let k = 0; k < a9[i].length; k++){
-           a9_res += a9[i][k] + '-';
+    let a9 = [['hi', 'mahai'], ['test', 'best']];
+    for (let item of a9) {
+        for (let i = 0; i < item.length; i++) {
+            a9_res += item[i] + '-';
         }
     }
-document.querySelector('.out-9').innerHTML = a9_res;
+    document.querySelector('.out-9').innerHTML = a9_res ;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -128,8 +127,14 @@ document.querySelector('.b-9').onclick = t9;
 // Task 10 ============================================
 /*  Дан массив a10 = {name: ivan, age: 15, sex: 1, id: 45} - преобразуйте его в query строку ( так передаются GET параметры). Найдите описание что такое query строка самостоятельно. Разделитель - амперсанд. Результат присвойте a10_res. Запускаться решение должно при вызове функции t10. Допускается лишний амперсанд в конце строки!!! */
 
-function t10() {
+a10 = { name: 'ivan', age: 15, sex: 1, id: 45 }
 
+function t10() {
+    let a10_res = '';
+    for (key in a10) {
+        a10_res += key + '=' + a10[key] + '&';
+    }
+    document.querySelector('.out-10').textContent = '?' + a10_res;
 }
 
 document.querySelector('.b-10').onclick = t10;
