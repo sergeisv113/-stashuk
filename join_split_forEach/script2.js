@@ -19,7 +19,10 @@ document.querySelector('.b-1').onclick = t1;
 запускаться при вызове функции t2.*/
 
 function t2() {
-
+a1.forEach(el => {
+    a2_res.push(el / 2);
+  });
+document.querySelector('.out-2').innerHTML = a2_res;
 }
 
 document.querySelector('.b-2').onclick = t2;
