@@ -88,7 +88,9 @@ document.querySelector('.b-6').onclick = t6;
 /*  Дана строка str7='hello world hi mazai' - преобразуйте ее в массив и разбейте по словам. Причем слова не должны содержать пробелов и присвойте a6_res. выведите на страницу.  Запускаться решение должно при вызове функции t7. */
 
 function t7() {
-
+let str7 = 'hello world hi mazai';
+a6_res.push(str7.split(' ').join(''));
+document.querySelector('.out-7').innerHTML = a6_res;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -97,7 +99,9 @@ document.querySelector('.b-7').onclick = t7;
 /*  Дан массив a8 = [1,2,66,77,15] - преобразуйте ее в строку. Разделитель - дефис. Результат присвойте a8_res. Запускаться решение должно при вызове функции t8. */
 
 function t8() {
-
+let a8 = [1,2,66,77,15];
+a8_res = (a8.join('-'));
+document.querySelector('.out-8').innerHTML = a8_res;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -106,8 +110,16 @@ document.querySelector('.b-8').onclick = t8;
 // Task 9 ============================================
 /*  Дан массив a9 = [[hi, mahai], [test, best]] - преобразуйте его в строку. Разделитель - дефис. Результат присвойте a9_res. Запускаться решение должно при вызове функции t9. Допускается лишний дефис в конце строки!!! */
 
-function t9() {
 
+function t9() {
+    let a9_res = '';
+    let a9 = [[hi, mahai], [test, best]];
+    for (let i of a9){
+        for (let k = 0; k < a9[i].length; k++){
+           a9_res += a9[i][k] + '-';
+        }
+    }
+document.querySelector('.out-9').innerHTML = a9_res;
 }
 
 document.querySelector('.b-9').onclick = t9;
