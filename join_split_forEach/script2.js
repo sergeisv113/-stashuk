@@ -19,7 +19,8 @@ document.querySelector('.b-1').onclick = t1;
 запускаться при вызове функции t2.*/
 
 function t2() {
-a1.forEach(el => {
+    let a1 = [2,3,4,5,10,11,12];
+    a1.forEach(el => {
     a2_res.push(el / 2);
   });
 document.querySelector('.out-2').innerHTML = a2_res;
@@ -32,7 +33,11 @@ document.querySelector('.b-2').onclick = t2;
 /*  Дан массив a3 = [2, 'hello', 3, 'hi', 4, 'Mazai'] - с помощью forEach переберите массив и создайте новый массив a3_res куда добавьте элементы данного массива являющиеся числом. Запускаться решение должно при вызове функции t3.*/
 
 function t3() {
-
+let a3 = [2, 'hello', 3, 'hi', 4, 'Mazai'];
+a3.forEach(el => {
+    if (typeof el == "number") a3_res.push(el);
+  });
+document.querySelector('.out-3').innerHTML = a3_res;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -42,7 +47,12 @@ document.querySelector('.b-3').onclick = t3;
 /*  На странице созданы 3 span.task-4 c атрибутом data. С помощью forEach переберите их и добавьте атрибуты в массив a4_res  Запускаться решение должно при вызове функции t4.*/
 
 function t4() {
-
+let spans = document.querySelectorAll('.task-4');
+spans.forEach(el => {
+    let d = el.getAttribute('data');
+   a4_res.push(d);
+   });
+document.querySelector('.out-4').innerHTML = a4_res;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -52,7 +62,8 @@ document.querySelector('.b-4').onclick = t4;
 /*  На странице созданы 3 p.task-5 c атрибутом data. С помощью forEach переберите их и добавьте событие клик. Напишите функцию t5, которая будет запускаться при клике и добавлять атрибут data элемента, по которому кликнули в массив a5_res.*/
 
 function t5() {
-
+ a5_res.push(this.getAttribute('data'));
+ document.querySelector('.out-5').innerHTML = a5_res;
 }
 
 document.querySelectorAll('.task-5').forEach(elem => {
@@ -65,7 +76,9 @@ document.querySelectorAll('.task-5').forEach(elem => {
 /*  Дана строка str6='helloworld' - преобразуйте ее в массив и присвойте a6_res. Выведите на страницу. Запускаться решение должно при вызове функции t6. */
 
 function t6() {
-
+let str6 = 'helloworld';
+a6_res.push(str6.split(' '));
+document.querySelector('.out-6').innerHTML = a6_res;
 }
 
 document.querySelector('.b-6').onclick = t6;
