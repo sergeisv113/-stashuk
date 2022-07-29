@@ -82,40 +82,47 @@ document.querySelector('.div-7').oncontextmenu = t7;
 
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
-
+let c = document.querySelector('.ch-8');
 function t8() {
-
+if (c.checked){
+     document.oncontextmenu = () => {return false};
+ } else {
+   document.oncontextmenu = () => {return true};
+ }
 }
-
+c.onchange = t8;
 // ваше событие здесь!!!
 
 
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
-
-function t9() {
-
+function t9(e) {
+    return e.target.src = 'img/2.png';
 }
-
+document.querySelector('.div-9').oncontextmenu = t9;
 // ваше событие здесь!!!
 
 
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
-
+let img10 = document.querySelector('.div-10 img');
 function t10() {
-
+return img10.src = 'img/2.png';
+// ||function t10(e)
+//     return e.target.src = 'img/2.png';
 }
-
+document.querySelector('.div-10').onmouseover = t10;
 // ваше событие здесь!!!
 
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
-
 function t11() {
-
+document.querySelector('.div-11 img').src = 'img/2.png';}
+function t11_1(){
+    document.querySelector('.div-11 img').src = 'img/1.png';
 }
-
+document.querySelector('.div-11').onmouseenter = t11;
+document.querySelector('.div-11').onmouseleave = t11_1;
 // ваше событие здесь!!!
 
 // Task 12 ============================================
