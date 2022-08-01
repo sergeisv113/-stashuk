@@ -156,32 +156,36 @@ function t14() {
 
 // Task 15 ============================================
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
-
+let i15 = 1;
 function t15(e) {
-  let w = 1;
- return e.target.style.background
+    i15++;
+    // return document.querySelector('.div-15').textContent = i15 ;  ||
+    return e.target.textContent = i15 ;
 }
-    document.querySelector('.div-15').onmove = t15;
+    document.querySelector('.div-15').onmousemove = t15;
 // ваше событие здесь!!!
 
 
 // Task 16 ============================================
 /*  Дан блок .div-16. Добавьте на него событие move. При каждом движении мыши увеличивайте ширину блока на 1px. */
-
+let i16 = 75;
 function t16() {
-
+   return document.querySelector('.div-16').style.width = i16++ + 'px';
 }
+document.querySelector('.div-16').onmousemove = t16;
 // ваше событие здесь!!!
 
 // Task 17 ============================================
 /*  Дано две кнопки - b-17_on и b-17_off. Напишите фукнции t17On и t17Off которые включают и отключают событие move в задании 16. */
 
 function t17On() {
-
+   return  document.querySelector('.div-16').onmousemove = t16;
 }
 function t17Off() {
-
+  return document.querySelector('.div-16').onmousemove = false;
 }
+document.querySelector('.b-17_on').onclick = t17On;
+document.querySelector('.b-17_off').onclick = t17Off;
 // ваше событие здесь!!!
 // ваше событие здесь!!!
 
