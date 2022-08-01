@@ -191,25 +191,31 @@ document.querySelector('.b-17_off').onclick = t17Off;
 
 // Task 18 ============================================
 /*  Дан блок div-18. Напишите фукнцию t18 которая выводит в данный блок его ширину при событии onmouseenter. */
+let i18 = document.querySelector('.div-18');
 
 function t18() {
-
+return document.querySelector('.out-18').innerHTML = i18.offsetWidth + 'px';
 }
+i18.onmouseenter = t18;
 // ваше событие здесь!!!
 
 // Task 19 ============================================
 /*  Дан блок div-19. Напишите фукнцию t19 которая выводит в данный блок его классы при событии onmouseout. */
 
-function t19() {
+function t19(e) {
 
+return document.querySelector('.out-19').innerHTML = e.target.classList;
 }
+document.querySelector('.div-19').onmouseout = t19;
 // ваше событие здесь!!!
 
 
 // Task 20 ============================================
 /*  Дан элемент progress. Напишите фукнцию t20 которая увеличивает его value на 1 при каждом событии mousemove внутри progress. */
-
+let p = 10;
 function t20() {
-
+    p++;
+return document.querySelector('progress').value = p;
 }
+document.querySelector('progress').onmouseout = t20;
 // ваше событие здесь!!!
